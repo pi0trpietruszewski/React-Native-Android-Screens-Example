@@ -1,6 +1,8 @@
 # react-native-awesome-module-rn
 
-c
+Native Screens in react native
+
+Creaded with [Netguru](https://netguru.com)
 
 ## Installation
 
@@ -10,12 +12,19 @@ npm install react-native-awesome-module-rn
 
 ## Usage
 
-```js
+To run the example app on Android:
+
+```sh
+yarn example android
+```
+
+```ts
 import AwesomeModuleRn from "react-native-awesome-module-rn";
 
 // ...
 
-const result = await AwesomeModuleRn.multiply(3, 7);
+AwesomeModuleRn.showView();
+AwesomeModuleRn.showViewNavigateTo(nativeScreenName);
 ```
 
 ## Contributing

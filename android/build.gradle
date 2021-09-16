@@ -7,9 +7,9 @@ buildscript {
     jcenter()
   }
 
+
   dependencies {
     classpath 'com.android.tools.build:gradle:3.2.1'
-    // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
@@ -33,9 +33,9 @@ android {
     targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     versionCode 1
     versionName "1.0"
-    
+
   }
-  
+
   buildTypes {
     release {
       minifyEnabled false
@@ -63,8 +63,8 @@ repositories {
     defaultDir = rootProject.ext.get('reactNativeAndroidRoot')
   } else {
     defaultDir = new File(
-            projectDir,
-            '/../../../node_modules/react-native/android'
+      projectDir,
+      '/../../../node_modules/react-native/android'
     )
   }
 
@@ -84,13 +84,13 @@ repositories {
       parentDir = parentDir.parentFile
 
       def androidSourcesDir = new File(
-              parentDir,
-              'node_modules/react-native'
+        parentDir,
+        'node_modules/react-native'
       )
 
       def androidPrebuiltBinaryDir = new File(
-              parentDir,
-              'node_modules/react-native/android'
+        parentDir,
+        'node_modules/react-native/android'
       )
 
       if (androidPrebuiltBinaryDir.exists()) {
@@ -115,8 +115,8 @@ repositories {
 
   if (!found) {
     throw new GradleException(
-            "${project.name}: unable to locate React Native android sources. " +
-                    "Ensure you have you installed React Native as a dependency in your project and try again."
+      "${project.name}: unable to locate React Native android sources. " +
+        "Ensure you have you installed React Native as a dependency in your project and try again."
     )
   }
 }
@@ -127,4 +127,11 @@ dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+  // Add below code
+  def nav_version = "2.3.5"
+  implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+  implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
 }

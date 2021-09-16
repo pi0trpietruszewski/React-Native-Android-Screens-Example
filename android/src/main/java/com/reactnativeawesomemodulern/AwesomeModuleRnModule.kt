@@ -1,5 +1,6 @@
 package com.reactnativeawesomemodulern
 
+import android.content.Intent
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
@@ -11,14 +12,23 @@ class AwesomeModuleRnModule(reactContext: ReactApplicationContext) : ReactContex
         return "AwesomeModuleRn"
     }
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
-    @ReactMethod
-    fun multiply(a: Int, b: Int, promise: Promise) {
-    
-      promise.resolve(a * b)
-    
-    }
+  @ReactMethod
+  fun showView(promise: Promise) {
+    val intent = Intent(reactApplicationContext, ModuleNameActivity::class.java)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    reactApplicationContext.startActivity(intent)
+    promise.resolve(true)
+  }
 
-    
+  @ReactMethod
+  fun showViewNavigateTo(text: String? = "", promise: Promise) {
+    val intent = Intent(reactApplicationContext, ModuleNameActivity::class.java)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    intent.putExtra("screenId", text)
+    reactApplicationContext.startActivity(intent)
+    promise.resolve(true)
+  }
+
+
+
 }

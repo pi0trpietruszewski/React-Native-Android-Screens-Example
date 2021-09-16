@@ -1,7 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type AwesomeModuleRnType = {
-  multiply(a: number, b: number): Promise<number>;
+  showView(): Promise<void>;
+  showViewNavigateTo(text?: string): Promise<void>;
 };
 
 const { AwesomeModuleRn } = NativeModules;

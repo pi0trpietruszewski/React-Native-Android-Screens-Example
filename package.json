@@ -1,7 +1,7 @@
 {
   "name": "react-native-awesome-module-rn",
   "version": "0.1.0",
-  "description": "c",
+  "description": "Native Screens in react native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -36,13 +36,10 @@
     "ios",
     "android"
   ],
-  "repository": "http://ss.s",
-  "author": "pp <ww@ww.pl> (http://d.d)",
+  "repository": "https://github.com/pi0trpietruszewski/React-Native-Android-Screens-Example",
+  "author": "Piotr Pietruszewski <piotr.pietruszewski@netguru.com> (https://netguru.com)",
   "license": "MIT",
-  "bugs": {
-    "url": "http://ss.s/issues"
-  },
-  "homepage": "http://ss.s#readme",
+  "homepage": "https://netguru.com",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.reactnativeawesomemodulern">
-
+  <application>
+  <activity android:name="com.reactnativeawesomemodulern.ModuleNameActivity" />
+  </application>
 </manifest>
